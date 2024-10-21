@@ -31,8 +31,8 @@ export const FormFieldList: React.FC<FormFieldListProps> = ({
           <div className="flex w-full font-medium text-sm">
             <div className="w-12" />
             <div className="grid grid-cols-6 w-full">
-              <div className="col-span-2">Label</div>
-              <div className="col-span-2">Description</div>
+              <div className="col-span-2"> <b>Label</b></div>
+              <div className="col-span-2"><b>Description</b></div>
               <div className="col-span-1">
                 <If
                   condition={isDesktop}

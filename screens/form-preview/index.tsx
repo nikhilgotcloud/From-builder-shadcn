@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react'
 import { Highlight, themes } from 'prism-react-renderer'
 import { z } from 'zod'
@@ -19,7 +20,11 @@ import { Files } from 'lucide-react'
 export type FormPreviewProps = {
   formFields: FormFieldType[]
 }
-
+type PrismToken = {
+  types: string[]
+  content: string
+  empty?: boolean
+}
 const generateZodSchema = (formFields: FormFieldType[]) => {
   const schemaObject: Record<string, any> = {}
 
@@ -338,9 +343,9 @@ export const FormPreview: React.FC<FormPreviewProps> = ({ formFields }) => {
     <div className="w-full h-full col-span-1 rounded-xl flex justify-center">
       <Tabs defaultValue="preview" className="w-full">
         <TabsList className="flex justify-center w-fit mx-auto">
-          <TabsTrigger value="preview">Preview</TabsTrigger>
-          <TabsTrigger value="json">JSON</TabsTrigger>
-          <TabsTrigger value="code">Code</TabsTrigger>
+          <TabsTrigger value="preview"> <b>Preview</b></TabsTrigger>
+          <TabsTrigger value="json"><b>JSON</b></TabsTrigger>
+          <TabsTrigger value="code"><b>Code</b></TabsTrigger>
         </TabsList>
         <TabsContent
           value="preview"
@@ -433,9 +438,12 @@ export const FormPreview: React.FC<FormPreviewProps> = ({ formFields }) => {
                       h-full md:max-h-[70vh] overflow-auto`}
                       style={style}
                     >
-                      {tokens.map((line: any, i: number) => (
+                      {tokens.map((line: PrismToken[], i: number) => (
+                        // eslint-disable-next-line react/jsx-key
                         <div {...getLineProps({ line, key: i })}>
-                          {line.map((token: any, key: any) => (
+                          
+                          {line.map((token: PrismToken, key: unknown) => (
+                            // eslint-disable-next-line react/jsx-key
                             <span {...getTokenProps({ token, key })} />
                           ))}
                         </div>
