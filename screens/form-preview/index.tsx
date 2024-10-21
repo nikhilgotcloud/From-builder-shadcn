@@ -374,7 +374,7 @@ export const FormPreview: React.FC<FormPreviewProps> = ({ formFields }) => {
                       />
                     </React.Fragment>
                   ))}
-                  <Button type="submit" className='bg-blue-600'>Submit</Button>
+                  <Button type="submit" className='bg-blue-600 text-white'>Submit</Button>
                 </form>
               </Form>
             )}

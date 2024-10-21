@@ -66,8 +66,9 @@ export default function FormBuilder() {
   return (
     <section className="max-h-screen space-y-8">
       <div className="max-w-5xl mx-auto space-y-4">
-        <h1 className="text-2xl font-semibold text-blue-600 mt-2">Shadcn Form Builder</h1>
-          <p>Select the field type from left and edit the form accordingly and Get code by clicking on Code tab.</p>
+        <h1 className="text-2xl font-semibold text-blue-600 mt-2">FormGenie  </h1>
+        <p>Drag-and-Drop Form Generator with Code Export</p>
+          <p> <b>Select the field type from left and edit the form accordingly and Get code by clicking on Code tab</b></p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 items-start gap-8 md:px-5">
         <div className="w-full h-full col-span-1 md:space-x-3 md:max-h-[75vh] flex flex-col md:flex-row ">

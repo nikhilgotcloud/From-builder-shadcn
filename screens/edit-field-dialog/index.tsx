@@ -113,7 +113,7 @@ export const EditFieldDialog: React.FC<EditFieldDialogProps> = ({
           </div>
         </div>
         <DialogFooter>
-          <Button onClick={handleSave}>Save changes</Button>
+          <Button onClick={handleSave} className="bg-blue-700 text-white">Save changes</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
